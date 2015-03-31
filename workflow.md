@@ -29,7 +29,7 @@ that every project should consist of.
         php artisan optimize
         php artisan up    
     ```
-  nb: you may have to delete vendor/compiled.php manually if errors persist.    
+  nb: you may have to delete <b>vendor/compiled.php</b> manually if errors persist.    
   
 *  <b> Generators for database migration. </b>
 
@@ -45,6 +45,12 @@ that every project should consist of.
     
     ```
 
+* <b> Name your Project for NAMESPACE </b>
+
+    ```
+    php artisan app:name {YOUR_NAMESPACE}     
+    ```
+    
 * <b> Edit /[Project root]/composer.json </b>
 
      Generators and Testdummy should be enclosed inside require-dev (as they are dev only tools)<br>
@@ -64,7 +70,10 @@ that every project should consist of.
 	}
     
  	```
-
+    To complete New Packages Run:
+    ```
+        sudo composer update
+    ```
 * <b> Create Seed files - Using Testdummy and Faker </b>
  
     1. to create a file use:
@@ -107,7 +116,7 @@ that every project should consist of.
 
 ### Links:
 
- * [PHP Vars To JavaScritpt Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer)
+ * [PHP Vars To JavaScript Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer)
  * [Laracasts](https://laracasts.com) Laravel and PHP tutorials.
  * [Testdummy](https://github.com/laracasts/TestDummy) Github repository.
  * [Generators](https://github.com/laracasts/Laravel-5-Generators-Extended) Github repository. 

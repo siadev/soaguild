@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace soaguild\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,8 +27,14 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
+			'soaguild\Services\Registrar'
 		);
+
+        if ($this->app->environment() == 'local')
+        {
+            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+        }
+
 	}
 
 }

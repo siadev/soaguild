@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace soaguild\Services;
 
-use App\User;
+use soaguild\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
