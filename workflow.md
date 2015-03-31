@@ -16,33 +16,41 @@ The purpose of this file is to briefly list the tools used and methods
 that every project should consist of.
  
  ## List of Composer Installation (Packages)
-* ***Before we start run***
+* <b>Before we start run</b>
 
     ```
     sudo composer update 
-
     ```
+  Also create a tiny script to prevent composer errors:
+    ```
+        php artisan down
+        php artisan clear-compiled
+        composer update --no-dev
+        php artisan optimize
+        php artisan up    
+    ```
+  nb: you may have to delete vendor/compiled.php manually if errors persist.    
   
-*  *** Generators for database migration. ***
+*  <b> Generators for database migration. </b>
 
     ```
      sudo composer require laracasts/generators --dev 
      
     ```
 
-*   *** Testdummy and Faker ***
+*   <b> Testdummy and Faker </b>
 
 	```
  	sudo composer require laracasts/testdummy --dev 
     
     ```
 
-* *** Edit /[Project root]/composer.json ***
+* <b> Edit /[Project root]/composer.json </b>
 
      Generators and Testdummy should be enclosed inside require-dev (as they are dev only tools)<br>
      So move "laracasts/generators"... from "require": { ... to "require-dev": {...
 
-* *** Edit /[Project root]/config/app.php ***
+* <b> Edit /[Project root]/config/app.php </b>
  
  add the provider in app/Providers/AppServiceProvider.php, like so:
  
@@ -57,7 +65,7 @@ that every project should consist of.
     
  	```
 
-* *** Create Seed files - Using Testdummy and Faker ***
+* <b> Create Seed files - Using Testdummy and Faker </b>
  
     1. to create a file use:
 
@@ -69,7 +77,7 @@ that every project should consist of.
     
     https://github.com/laracasts/TestDummy
     
-    *** NOTES ON SEEDING : ***
+    <b> NOTES ON SEEDING : </b>
     ```
         composer dump-autoload
     ```
@@ -80,7 +88,7 @@ that every project should consist of.
     ```
       
  
- * *** Transform PHP vars to Javascript ***
+ * <b> Transform PHP vars to Javascript </b>
   
    Begin by installing this package through Composer.
    
@@ -93,7 +101,7 @@ that every project should consist of.
         
     ```
     
-    ***Reference: *** https://github.com/laracasts/PHP-Vars-To-Js-Transformer
+    <b>Reference: </b> https://github.com/laracasts/PHP-Vars-To-Js-Transformer
  +    
 
 
