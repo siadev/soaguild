@@ -50,6 +50,23 @@ that every project should consist of.
     ```
     php artisan app:name {YOUR_NAMESPACE}     
     ```
+
+* <b> Problems with log files (Write Protect)
+    Edit your sites-available/site.conf file
+    Add these line for so that www-data can write
+    ```html
+            <Directory /srv/www/soaguild.dev/storage/>
+                Options All
+                AllowOverride All
+                Require all granted
+            </Directory>
+    
+            <Directory /srv/www/soaguild.dev/storage/logs>
+                Options All
+                AllowOverride All
+                Require all granted
+            </Directory>
+    ```
     
 * <b> Edit /[Project root]/composer.json </b>
 
