@@ -51,17 +51,17 @@ that every project should consist of.
     php artisan app:name {YOUR_NAMESPACE}     
     ```
 
-* <b> Problems with log files (Write Protect)
-    Edit your sites-available/site.conf file
-    Add these line for so that www-data can write
+* <b> Problems with log files (Write Protect)<br>
+      Edit your sites-available/site.conf file<br>
+      Add these line so that www-data can write
     ```html
-            <Directory /srv/www/soaguild.dev/storage/>
+            <Directory /srv/www/SITENAME/storage/>
                 Options All
                 AllowOverride All
                 Require all granted
             </Directory>
     
-            <Directory /srv/www/soaguild.dev/storage/logs>
+            <Directory /srv/www/SITENAME/storage/logs>
                 Options All
                 AllowOverride All
                 Require all granted

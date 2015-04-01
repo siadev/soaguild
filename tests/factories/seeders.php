@@ -2,7 +2,7 @@
 $realms = ['Dreadmaul', 'Thaurissan'];
 
 $factory('soaguild\User', [
-    'main_toon' => $faker->unique()->name,
+    'main_toon' => $faker->unique()->firstName,
     'is_admin' => 0,
     'role' => 'member',
     'email' => $faker->unique()->email,
@@ -13,7 +13,7 @@ $factory('soaguild\User', [
 // And a custom one for administrators
 
 $factory('soaguild\User', 'admin_user', [
-    'main_toon' => $faker->unique()->name,
+    'main_toon' => $faker->unique()->firstName,
     'is_admin' => 1,
     'role' => 'admin',
     'email' => $faker->unique()->email,
@@ -24,7 +24,7 @@ $factory('soaguild\User', 'admin_user', [
 
 $factory('soaguild\ApiMember', [
     'user_id'                  => 'factory:soaguild\User',
-    'main_toon'                => $faker->name,
+    'main_toon'                => $faker->firstName,
     'toon_realm'               => $faker->words('Dreadmaul', 'Thaurissan'),
     'toon_level'               => $faker->numberBetween(1,100),
     'toon_class'               => $faker->numberBetween(1,10),

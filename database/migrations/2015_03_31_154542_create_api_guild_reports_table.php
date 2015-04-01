@@ -16,6 +16,11 @@ class CreateApiGuildReportsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+            $table->string('name');
+            $table->string('realm');
+            $table->integer('level');
+            $table->integer('side');
+            $table->integer('achievementPoints');
 		});
 	}
 

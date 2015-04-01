@@ -16,6 +16,10 @@ class CreateApiFeedsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+            $table->string('type');
+            $table->string('character');
+            $table->dateTime('timestamp');
+            $table->bigInteger('itemId');
 		});
 	}
 
