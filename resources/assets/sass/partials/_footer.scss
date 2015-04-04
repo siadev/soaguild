@@ -1,0 +1,27 @@
+FOOTER  {
+  margin: 0 auto;
+  padding: 20px 45px 20px 45px;
+  color: #c3bfc1;
+  background-image: url($dark-bg);
+  width: 100% ; border: 0;
+
+  h1 {
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #1b1613;
+    color: #1484e6;
+    opacity: 0.3;
+    font-family: $script;
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 40px;
+  }
+  SECTION#footer-links {
+    @include section-shadow(0,0,35px, #121422);
+    margin:0 auto;
+    width: 1000px;
+    text-align: center;
+    padding: 0 10px 10px;
+  }
+
+}
+
+

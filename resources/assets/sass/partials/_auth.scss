@@ -1,0 +1,23 @@
+SECTION#auth {
+  margin: 120px auto 0 auto;
+  width: 1000px; border: 0;
+  background: transparent;
+}
+
+SECTION#auth .panel {
+  @include section-shadow(15px, 15px, 20px,#000011  );
+  background: transparent;
+  border-color: #000000;
+}
+
+SECTION#auth .panel-heading {
+  background: url($nav-bg) repeat-x;
+  height: 50px;
+  color: blanchedalmond;
+  font-size: 22px;  font-style: italic;  font-weight: bold;
+}
+
+SECTION#auth .panel-body{
+  color: #c3bfc1;
+  background-image: url($dark-bg);
+}

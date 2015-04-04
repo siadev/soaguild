@@ -29,7 +29,7 @@ that every project should consist of.
         php artisan optimize
         php artisan up    
     ```
-  nb: you may have to delete <b>vendor/compiled.php</b> manually if errors persist.    
+    <sub><b>note:</b> you may have to delete <b>vendor/compiled.php</b> manually if errors persist.</sub>    
   
 *  <b> Generators for database migration. </b>
 

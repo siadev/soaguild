@@ -1,0 +1,125 @@
+$page-top-padding: 15px;
+$small-form-frame-width: 600px;
+$dark-bg: "/images/dark-tran-bg.png";
+$dark-bg-tran: "/images/bgt-80.png";
+$nav-bg: "/images/bgt-70.png";
+$light-bg: "/images/light-bg";
+$frame-width: 1000px;
+
+// Font Variables
+$roboto: 'Roboto Slab';
+$sans: 'Open Sans';
+$script: 'Dancing Script';
+
+@import "partials/mixins";
+@import "bootstrap.scss";
+@import "partials/nav";
+@import "partials/breadcrumbs.scss";
+@import "partials/forms";
+@import "partials/auth";
+@import "partials/wowClassColours";
+@import "partials/guildmembers";
+@import "partials/footer";
+@import "partials/feeds";
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Montserrat:400,700|Dancing+Script:400,700|Roboto:400,100,300,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic|Open+Sans:400,300,600,700,800,300italic,400italic,600italic,800italic,700italic|Roboto+Slab:400,100,300,700);
+
+
+html { overflow-y: scroll; }
+
+body {
+  padding-top: $page-top-padding;
+  background: #010101 url(/images/bg.jpg) no-repeat fixed;
+  background-size: 100%;
+  margin: 0;
+}
+
+SECTION#restults {
+  column-count: 5;
+  column-width: 250px;
+  column-gap: 5px;
+  column-rule: 1px solid #e1e1e1;
+}
+
+SECTION#about {
+  font-size: 18px;
+  color: #2aabd2;
+
+  h1 {  color: #007fff; }
+}
+
+
+#logo {  margin-top: -10px; }
+
+#coc {  font-size: 15px; }
+
+MAIN {
+  @include section-shadow(15px, 15px, 20px,#000011  );
+  @include border-radius(12px);
+  margin: 120px auto 0 auto;
+  padding: 20px 15px 20px 15px;
+  color: #c3bfc1;
+  background-image: url($dark-bg-tran);
+  width: 1200px; border: 0;
+}
+
+MAIN .main-area {
+  @extend .row;
+  padding: 0;
+
+  aside {
+    @extend .col-xs-2;
+    @extend .col-sm-2;
+    text-align: center;
+  }
+
+  .content {
+    @extend .col-xs-12;
+    @extend .col-sm-12;
+    width: $frame-width;
+    padding: 0;
+  }
+
+  H4 {
+    text-shadow: -1px -1px 1px #000000, 1px 1px 1px #a2f2c2;
+    font-family: $roboto;
+    color: #cfe69d;
+  }
+}
+
+// Add this class to prevent text wrapping in a span
+.overflow {
+  position:absolute;
+  top:0;
+  left:0;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  color:#ccc;
+  max-width:90%;
+}
+
+// Use this class to make something transparent
+.transparent-wrap { background-color: rgba(0,0,0,0) !important }
+
+// Image Transparency
+.img-tran {
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+
+.centered {
+  text-align: center;
+}
+
+.vspacer-30 {
+  margin-top: 30px;
+}
+
+SECTION#feeds {
+  width: 85%;
+
+  hr { border-top: 1px solid #000011; }
+}

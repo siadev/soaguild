@@ -1,0 +1,22 @@
+SECTION#guild-members {
+  margin: 120px auto 0 auto;
+  width: 900px; border: 0;
+  background: transparent;
+}
+
+SECTION#guild-members .panel {
+  background: transparent;
+  border-color: #000000;
+}
+
+SECTION#guild-members .panel-heading {
+  background: url($nav-bg) repeat-x;
+  height: 50px;
+  color: blanchedalmond;
+  font-size: 22px;  font-style: italic;  font-weight: bold;
+}
+
+SECTION#guild-members .panel-body{
+  color: #c3bfc1;
+  background-image: url($dark-bg);
+}

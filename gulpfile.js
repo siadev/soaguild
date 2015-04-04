@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+var targetCssDir = 'public/css';
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +13,25 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
+    mix.copy('bower/assets/angular/angular.min.js', 'public/js/angular.min.js');
+    // current
+
+    mix.sass('app.scss');
+
+    mix.styles([
+        'app.css'
+    ], 'public/css/styles.css', 'public/css');
+
+    mix.scripts([
+        'main.js',
+        'nav.js'
+    ], 'public/js/scripts.js', 'public/js');
+
+    mix.version([
+        "public/css/styles.css",
+        "public/js/scripts.js"
+    ]);
+
+
 });
+
