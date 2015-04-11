@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ $title or 'Sons of Anarchy' }}</title>
+    <title>Sons of Anarchy Guild | {{ $title or ucwords(Request::segment(1)) }}</title>
 
     <!-- Styles Note: Elixir will fill in the version number-->
     <!-- This prevents cache problems so that the filename will  -->

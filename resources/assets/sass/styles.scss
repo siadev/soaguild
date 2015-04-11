@@ -11,8 +11,27 @@ $roboto: 'Roboto Slab';
 $sans: 'Open Sans';
 $script: 'Dancing Script';
 
-@import "partials/mixins";
+/* Breadcrumbs Variables
+ * Bootstrap Mod by simon
+ */
+  $breadcrumb-padding-vertical:   0px !default;
+  $breadcrumb-padding-horizontal: 15px !default;
+  // Breadcrumb colours
+  $breadcrumb-bg:           tranparent;
+  $breadcrumb-color:        #f7fb2e;  // Breadcrumb symbol
+  $breadcrumb-separator:    "»";
+  $breadcrumb-active-color: #ffe27c;  // Breadcrumb current page
+
+/*
+ * Bootstrap Variables
+ * Only the ones that require changes.
+ */
+  $icon-font-path: "/fonts/bootstrap/";  // Bootstrap path for fonts directory
+
+
+
 @import "bootstrap.scss";
+@import "partials/mixins";
 @import "partials/nav";
 @import "partials/breadcrumbs.scss";
 @import "partials/forms";
@@ -21,7 +40,7 @@ $script: 'Dancing Script';
 @import "partials/guildmembers";
 @import "partials/footer";
 @import "partials/feeds";
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Montserrat:400,700|Dancing+Script:400,700|Roboto:400,100,300,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic|Open+Sans:400,300,600,700,800,300italic,400italic,600italic,800italic,700italic|Roboto+Slab:400,100,300,700);
+//@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Montserrat:400,700|Dancing+Script:400,700|Roboto:400,100,300,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic|Open+Sans:400,300,600,700,800,300italic,400italic,600italic,800italic,700italic|Roboto+Slab:400,100,300,700);
 
 
 html { overflow-y: scroll; }

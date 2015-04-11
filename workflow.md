@@ -114,6 +114,49 @@ that every project should consist of.
     ```
       
  
+ * <b> NPM Install gulp and Laravel </b>
+ Before using the Gulp file with elixir you need to Install the package dependencies.<br>
+ simply type:
+ 
+     ```
+         sudo npm install
+     ```
+ * <b> Install Laravel Breadcrumbs </b>
+   1. ``` sudo composer require davejamesmiller/laravel-breadcrumbs  ```
+   +  Add to config/app.php<br>
+      Add the service provider to ```providers```:
+   ```php
+           'providers' => [
+           
+               // ... Inside Providers Array
+               
+               /*
+                *  Other providers install through composer
+                */
+
+               'DaveJamesMiller\Breadcrumbs\ServiceProvider',
+           ],
+   ```
+   
+   And add the facade to ```aliases```:
+   ```php
+       'aliases' => [
+
+               // ... Inside Aliases Array
+               
+               /*
+                *  Other Aliases install through composer
+                */
+
+               'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
+       ],
+   ```   
+   
+   Then define your breadcrumbs by creating:
+   ```
+      app/Http/breadcrumbs.php
+   ```
+ 
  * <b> Transform PHP vars to Javascript </b>
   
    Begin by installing this package through Composer.

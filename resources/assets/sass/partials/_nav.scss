@@ -1,23 +1,27 @@
 NAV {
   background: url($nav-bg) repeat-x !important;
+  font-family: "Georgia", Times, serif;
   margin: 0 !important;
   position: fixed;
   top: 0;
   left: 0;
-  color: aliceblue;
   width: 100%;  height: 50px;
   z-index: 999;
   @include section-shadow(5px, 5px, 30px, #979296);
 
+//  a {color: greenyellow}
+
   input.search{
     background-color:rgba(0,0,0,0) !important;
     height: 28px;
+
+
   }
 
   button.btn-search{
     background-color:rgba(0,0,0,0) !important;
     height: 28px;
-    color: #a6dbff;
+    color: #00ac4d;
   }
 
   // change Search icon colour on hover
@@ -46,5 +50,22 @@ NAV {
   padding: 15px;
   color: #f4f4f4;
   opacity: 0.5;
+}
+
+.icon-bar {
+  background-color: #0000FF; // Bootstrap Mod by simon
+}
+
+// Menu Link colours
+.navbar-nav {
+  > li > a {
+    color: #adff2f; // Bootstrap Mod by simon
+  }
+}
+
+// Menu position and menu carets
+.navbar-nav > li > .dropdown-menu {
+  background-color: #000000; // Bootstrap Mod by simon
+  opacity:0.8;
 }
 

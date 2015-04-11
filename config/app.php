@@ -145,6 +145,11 @@ return [
 		'soaguild\Providers\EventServiceProvider',
 		'soaguild\Providers\RouteServiceProvider',
 
+        /*
+         *  Other providers install through composer
+         */
+        'DaveJamesMiller\Breadcrumbs\ServiceProvider',
+
 	],
 
 	/*
@@ -192,6 +197,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+        /*
+         *  Other Aliases install through composer
+         */
+        'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
 
 	],
 

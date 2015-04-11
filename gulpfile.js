@@ -13,19 +13,20 @@ var targetCssDir = 'public/css';
  */
 
 elixir(function(mix) {
-    mix.copy('bower/assets/angular/angular.min.js', 'public/js/angular.min.js');
+    mix.copy('bower/angular/angular.min.js', 'public/js/angular.min.js');
+    mix.copy('bower/jquery/dist/jquery.min.js', 'public/js/jquery.min.js');
+    mix.copy('bower/jquery-ui/jquery-ui.min.js', 'public/js/jquery.min.js');
+
+
+
     // current
 
-    mix.sass('app.scss');
-
-    mix.styles([
-        'app.css'
-    ], 'public/css/styles.css', 'public/css');
+    mix.sass('styles.scss').coffee();
 
     mix.scripts([
         'main.js',
         'nav.js'
-    ], 'public/js/scripts.js', 'public/js');
+    ], 'public/js/scripts.js', 'resources/assets/js');
 
     mix.version([
         "public/css/styles.css",
