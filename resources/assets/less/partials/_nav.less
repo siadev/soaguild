@@ -1,5 +1,5 @@
 NAV {
-  background: url($nav-bg) repeat-x !important;
+  background: url(@nav-bg) repeat-x !important;
   font-family: "Georgia", Times, serif;
   margin: 0 !important;
   position: fixed;
@@ -7,7 +7,7 @@ NAV {
   left: 0;
   width: 100%;  height: 50px;
   z-index: 999;
-  @include section-shadow(5px, 5px, 30px, #979296);
+@include section-shadow(5px, 5px, 30px, #979296);
 
   input.search{
     background-color:rgba(0,0,0,0) !important;
@@ -31,7 +31,7 @@ NAV {
 
 // Navbar Link hover colour
 .navbar-nav li a:hover , .navbar-nav li a:focus ,.navbar-nav li a:active{
-  @include section-shadow(0, 15px, 20px, #757575);
+@include section-shadow(0, 15px, 20px, #757575);
   background-color: #262526 !important;
   opacity:0.8;
   color: orangered;
@@ -39,7 +39,7 @@ NAV {
 }
 
 .nav-current {
-  @include section-shadow(2px, 2px, 5px, #1c1b1c);
+@include section-shadow(2px, 2px, 5px, #1c1b1c);
   background-color: #000001;
   display: block;
   border: 0; height: 50px;
@@ -60,15 +60,14 @@ NAV {
 }
 
 // Dropdown Menu
-$dropdown-link-color: #adff2f;
-$dropdown-link-hover-color: orangered;
-$dropdown-link-hover-bg: black;
-$dropdown-divider-bg: #3f3b3e;
-$dropdown-link-active-bg: black;
+@dropdown-link-color: #adff2f;
+@dropdown-link-hover-color: orangered;
+@dropdown-link-hover-bg: black;
+@dropdown-divider-bg: #3f3b3e;
+@dropdown-link-active-bg: black;
 
 .navbar-nav > li > .dropdown-menu {
   background-color: #000000; // Bootstrap Mod by simon
   opacity:0.8;
 }
-
 

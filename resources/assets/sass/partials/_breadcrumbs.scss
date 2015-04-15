@@ -1,3 +1,15 @@
+/* Breadcrumbs Variables
+ * Bootstrap Mod by simon
+ */
+$breadcrumb-padding-vertical:   0px !default;
+$breadcrumb-padding-horizontal: 15px !default;
+// Breadcrumb colours
+$breadcrumb-bg:           tranparent;
+$breadcrumb-color:        #f7fb2e;  // Breadcrumb symbol
+$breadcrumb-separator:    "»";
+$breadcrumb-active-color: #ffe27c;  // Breadcrumb current page
+
+
 SECTION#breadcrumbs {
   @include section-shadow(0, 5px, 10px,#000011  );
   position: fixed; top: 50px; left: 0;

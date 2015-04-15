@@ -35,7 +35,7 @@
     <!-- Scripts -->
     <script src="{{ elixir("js/scripts.js") }}"></script>
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/js/ui-bootstrap.min.js"></script>
     @yield('scripts')

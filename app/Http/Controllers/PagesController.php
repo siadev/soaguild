@@ -59,13 +59,13 @@ class PagesController extends Controller {
             . $this->wow_Api;
 
         // Instantiate Command Variable to parse.
-//        $command = new WowFeedsCommand($httpRequest);
-        $command = new WowApiFeedsCommandBus($httpRequest);
+        $command = new WowFeedsCommand($httpRequest);
+        // $command = new WowApiFeedsCommandBus($httpRequest);
         // Call Self Handling Command through
         // the Laravel command bus (dispatcher).
 
         $json = $this->dispatch($command);
-//dd($json);
+
         return view('pages.activity_feeds', compact('title', 'wow_api', 'wow_realm', 'json'));
     }
 

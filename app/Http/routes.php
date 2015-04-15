@@ -15,23 +15,24 @@
     Route::get('/', ['uses' => 'PagesController@home', 'as' => 'home']);
     Route::get('home', ['uses' => 'PagesController@home' , 'as' => 'home']);
 
-
-
-// Single Page Routes
-    Route::get('news', ['uses' => 'PagesController@news' , 'as' => 'news'] );
+//region Single Page Routes
+    Route::get('news',  ['uses' => 'PagesController@news' ,  'as' => 'news'] );
     Route::get('about', ['uses' => 'PagesController@about' , 'as' => 'about']);
     Route::get('feeds', ['uses' => 'PagesController@feeds' , 'as' => 'feeds']);
+//endregion
 
-    //Route::get('feeds', ['middleware' => 'auth', 'uses' => 'PagesController@feeds', 'as' => 'feeds']);
-    Route::get('coc', ['middleware' => 'auth', 'uses' => 'PagesController@coc', 'as' => 'coc']);
-    Route::get('chat', ['middleware' => 'auth', 'uses' => 'PagesController@chat', 'as' => 'chat' ]);
-    Route::post('resetToonTable', ['middleware' => 'auth', 'uses' => 'AdminController@resetToonTable', 'as' => 'resetToonTable']);
+//region Authenticated Routes
+        //Route::get('feeds', ['middleware' => 'auth', 'uses' => 'PagesController@feeds', 'as' => 'feeds']);
+        Route::get('coc',             ['middleware' => 'auth', 'uses' => 'PagesController@coc',            'as' => 'coc']);
+        Route::get('chat',            ['middleware' => 'auth', 'uses' => 'PagesController@chat',           'as' => 'chat' ]);
+        Route::post('resetToonTable', ['middleware' => 'auth', 'uses' => 'AdminController@resetToonTable', 'as' => 'resetToonTable']);
+//endregion
 
-
-// Administration Routes
+//region Administration Routes
     Route::get('admin', ['uses' => 'AdminController@index', 'as' => 'admin']);
     Route::get('admin/get-members',['uses'  => 'AdminController@getMembers', 'as' => 'admin/get-members']);
     Route::get('access', ['middleware' => 'admin', 'uses' => 'AdminController@index', 'as' => 'access']);
+//endregion
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

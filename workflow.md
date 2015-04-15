@@ -157,6 +157,60 @@ that every project should consist of.
       app/Http/breadcrumbs.php
    ```
  
+ * <b><i> phpspec </i></b>
+   install phpspec
+   ```
+       sudo composer require phpspec/phpspec --dev
+   ```
+   create alias for ease of use
+   ```
+       alias phpspec=/srv/www/[SITENAME]/vendor/phpspec/phpspec/bin/phpspec
+   ```
+   test it
+   ```
+       phpspec
+   ```
+   For phpspec to work with Laravel you need to create a .phpspec.yml file
+   ```
+       touch .phpspec.yml
+   ```
+ 
+ * <b> phpunit </b>
+   install phpunit Globally
+   ```
+        sudo composer global require "phpunit/phpunit=4.6.*"
+   ```
+   create an alias for phpunit
+   ```
+        alias phpunit=~/.composer/vendor/bin/phpunit   
+   ```
+ 
+ * <b> Codeception </b> 
+   Codeception is a testing framework that uses PHPUnit and phpspec
+   first install it globally
+   ```
+       cd /usr/local/bin/codeception
+       wget http://codeception.com/codecept.phar
+   ```
+   Next create aliases to access cli commands from any project
+   1) Edit the alias file
+   ```bash
+       sudo vim ~/.bash_aliases
+   ```
+   2) Add these lines
+   ```bash
+       alias codec='php /usr/local/bin/codeception/codecept.phar'
+       
+       alias codecf='codec run functional'
+       
+       alias codecs='codec run Selenium'
+       
+       alias codeca='codec run acceptance'
+   ```
+   
+   
+ * <b> Travis </b>
+ 
  * <b> Transform PHP vars to Javascript </b>
   
    Begin by installing this package through Composer.

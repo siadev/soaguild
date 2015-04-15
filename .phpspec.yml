@@ -1,0 +1,7 @@
+suites:
+
+  soaguild_suite:
+    namespace: soaguild
+    src_path: app
+    spec_path: app
+    spec_prefix: spec

@@ -1,11 +1,199 @@
 @charset "UTF-8";
-/* Breadcrumbs Variables
- * Bootstrap Mod by simon
- */
 /*
  * Bootstrap Variables
  * Only the ones that require changes.
  */
+NAV {
+  background: url("/images/bgt-70.png") repeat-x !important;
+  font-family: "Georgia", Times, serif;
+  margin: 0 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 999;
+  box-shadow: 5px 5px 30px #979296; }
+  NAV input.search {
+    background-color: transparent !important;
+    height: 28px; }
+  NAV button.btn-search {
+    background-color: transparent !important;
+    height: 28px;
+    color: #00ac4d; }
+  NAV button.btn-default:hover {
+    color: #f6ff37; }
+
+.nav .navbar-nav .navbar-right .dropdown {
+  background: transparent; }
+
+.navbar-nav li a:hover, .navbar-nav li a:focus, .navbar-nav li a:active {
+  box-shadow: 0 15px 20px #757575;
+  background-color: #262526 !important;
+  opacity: 0.8;
+  color: orangered;
+  border: 0; }
+
+.nav-current {
+  box-shadow: 2px 2px 5px #1c1b1c;
+  background-color: #000001;
+  display: block;
+  border: 0;
+  height: 50px;
+  padding: 15px;
+  color: #f4f4f4;
+  opacity: 0.5; }
+
+.icon-bar {
+  background-color: #0000FF; }
+
+.navbar-nav > li > a {
+  color: #adff2f; }
+
+.navbar-nav > li > .dropdown-menu {
+  background-color: #000000;
+  opacity: 0.8; }
+
+/* Breadcrumbs Variables
+ * Bootstrap Mod by simon
+ */
+SECTION#breadcrumbs {
+  box-shadow: 0 5px 10px #000011;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 20px;
+  background-image: url("/images/bgt-80.png");
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  z-index: 998; }
+  SECTION#breadcrumbs a {
+    color: #adff2f; }
+  SECTION#breadcrumbs a:hover {
+    color: orangered; }
+
+ARTICLE#breadcrumbs {
+  width: 1000px;
+  padding-left: 200px; }
+
+.form-label {
+  width: 130px; }
+
+.form-frame {
+  margin: auto;
+  width: 600px;
+  padding: 10px;
+  text-align: center; }
+
+SECTION#auth {
+  margin: 120px auto 0 auto;
+  width: 1000px;
+  border: 0;
+  background: transparent; }
+
+SECTION#auth .panel {
+  box-shadow: 15px 15px 20px #000011;
+  background: transparent;
+  border-color: #000000; }
+
+SECTION#auth .panel-heading {
+  background: url("/images/bgt-70.png") repeat-x;
+  height: 50px;
+  color: blanchedalmond;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold; }
+
+SECTION#auth .panel-body {
+  color: #c3bfc1;
+  background-image: url("/images/dark-tran-bg.png"); }
+
+.druid {
+  color: #FF7D0A; }
+
+.hunter {
+  color: #ABD473; }
+
+.mage {
+  color: #69CCF0; }
+
+.monk {
+  color: #00FF96; }
+
+.paladin {
+  color: #F58CBA; }
+
+.priest {
+  color: #FFFFFF; }
+
+.deathnight {
+  color: #C41F3B; }
+
+.rogue {
+  color: #FFF569; }
+
+.shaman {
+  color: #0070DE; }
+
+.warlock {
+  color: #9482C9; }
+
+.warrior {
+  color: #C79C6E; }
+
+SECTION#guild-members {
+  margin: 120px auto 0 auto;
+  width: 900px;
+  border: 0;
+  background: transparent; }
+
+SECTION#guild-members .panel {
+  background: transparent;
+  border-color: #000000; }
+
+SECTION#guild-members .panel-heading {
+  background: url("/images/bgt-70.png") repeat-x;
+  height: 50px;
+  color: blanchedalmond;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold; }
+
+SECTION#guild-members .panel-body {
+  color: #c3bfc1;
+  background-image: url("/images/dark-tran-bg.png"); }
+
+FOOTER {
+  margin: 0 auto;
+  padding: 20px 45px 20px 45px;
+  color: #c3bfc1;
+  background-image: url("/images/dark-tran-bg.png");
+  width: 100%;
+  border: 0; }
+  FOOTER h1 {
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #1b1613;
+    color: #1484e6;
+    opacity: 0.3;
+    font-family: 'Dancing Script';
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 40px; }
+  FOOTER SECTION#footer-links {
+    box-shadow: 0 0 35px #121422;
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
+    padding: 0 10px 10px; }
+
+articlle#feeds .list-group {
+  background-color: transparent; }
+
+ul .list-group {
+  background-color: transparent; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -2613,26 +2801,26 @@ tbody.collapse.in {
     height: 1px;
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5; }
+    background-color: #3f3b3e; }
   .dropdown-menu > li > a {
     display: block;
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
     line-height: 1.42857;
-    color: #333333;
+    color: #adff2f;
     white-space: nowrap; }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #262626;
-  background-color: #f5f5f5; }
+  color: orangered;
+  background-color: black; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #337ab7; }
+  background-color: black; }
 
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
   color: #777777; }
@@ -4841,194 +5029,6 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-
-NAV {
-  background: url("/images/bgt-70.png") repeat-x !important;
-  font-family: "Georgia", Times, serif;
-  margin: 0 !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  z-index: 999;
-  box-shadow: 5px 5px 30px #979296; }
-  NAV input.search {
-    background-color: transparent !important;
-    height: 28px; }
-  NAV button.btn-search {
-    background-color: transparent !important;
-    height: 28px;
-    color: #00ac4d; }
-  NAV button.btn-default:hover {
-    color: #f6ff37; }
-
-.nav .navbar-nav .navbar-right .dropdown {
-  background: transparent; }
-
-.navbar-nav li a:hover, .navbar-nav li a:focus, .navbar-nav li a:active {
-  box-shadow: 0 15px 20px #757575;
-  background-color: #262526 !important;
-  opacity: 0.8;
-  color: orangered;
-  border: 0; }
-
-.nav-current {
-  box-shadow: 2px 2px 5px #1c1b1c;
-  background-color: #000001;
-  display: block;
-  border: 0;
-  height: 50px;
-  padding: 15px;
-  color: #f4f4f4;
-  opacity: 0.5; }
-
-.icon-bar {
-  background-color: #0000FF; }
-
-.navbar-nav > li > a {
-  color: #adff2f; }
-
-.navbar-nav > li > .dropdown-menu {
-  background-color: #000000;
-  opacity: 0.8; }
-
-SECTION#breadcrumbs {
-  box-shadow: 0 5px 10px #000011;
-  position: fixed;
-  top: 50px;
-  left: 0;
-  margin: 0;
-  width: 100%;
-  height: 20px;
-  background-image: url("/images/bgt-80.png");
-  font-size: 14px;
-  font-style: italic;
-  font-weight: bold;
-  z-index: 998; }
-  SECTION#breadcrumbs a {
-    color: #adff2f; }
-  SECTION#breadcrumbs a:hover {
-    color: orangered; }
-
-ARTICLE#breadcrumbs {
-  width: 1000px;
-  padding-left: 200px; }
-
-.form-label {
-  width: 130px; }
-
-.form-frame {
-  margin: auto;
-  width: 600px;
-  padding: 10px;
-  text-align: center; }
-
-SECTION#auth {
-  margin: 120px auto 0 auto;
-  width: 1000px;
-  border: 0;
-  background: transparent; }
-
-SECTION#auth .panel {
-  box-shadow: 15px 15px 20px #000011;
-  background: transparent;
-  border-color: #000000; }
-
-SECTION#auth .panel-heading {
-  background: url("/images/bgt-70.png") repeat-x;
-  height: 50px;
-  color: blanchedalmond;
-  font-size: 22px;
-  font-style: italic;
-  font-weight: bold; }
-
-SECTION#auth .panel-body {
-  color: #c3bfc1;
-  background-image: url("/images/dark-tran-bg.png"); }
-
-.druid {
-  color: #FF7D0A; }
-
-.hunter {
-  color: #ABD473; }
-
-.mage {
-  color: #69CCF0; }
-
-.monk {
-  color: #00FF96; }
-
-.paladin {
-  color: #F58CBA; }
-
-.priest {
-  color: #FFFFFF; }
-
-.deathnight {
-  color: #C41F3B; }
-
-.rogue {
-  color: #FFF569; }
-
-.shaman {
-  color: #0070DE; }
-
-.warlock {
-  color: #9482C9; }
-
-.warrior {
-  color: #C79C6E; }
-
-SECTION#guild-members {
-  margin: 120px auto 0 auto;
-  width: 900px;
-  border: 0;
-  background: transparent; }
-
-SECTION#guild-members .panel {
-  background: transparent;
-  border-color: #000000; }
-
-SECTION#guild-members .panel-heading {
-  background: url("/images/bgt-70.png") repeat-x;
-  height: 50px;
-  color: blanchedalmond;
-  font-size: 22px;
-  font-style: italic;
-  font-weight: bold; }
-
-SECTION#guild-members .panel-body {
-  color: #c3bfc1;
-  background-image: url("/images/dark-tran-bg.png"); }
-
-FOOTER {
-  margin: 0 auto;
-  padding: 20px 45px 20px 45px;
-  color: #c3bfc1;
-  background-image: url("/images/dark-tran-bg.png");
-  width: 100%;
-  border: 0; }
-  FOOTER h1 {
-    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #1b1613;
-    color: #1484e6;
-    opacity: 0.3;
-    font-family: 'Dancing Script';
-    font-size: 50px;
-    font-weight: bold;
-    padding-left: 40px; }
-  FOOTER SECTION#footer-links {
-    box-shadow: 0 0 35px #121422;
-    margin: 0 auto;
-    width: 1000px;
-    text-align: center;
-    padding: 0 10px 10px; }
-
-articlle#feeds .list-group {
-  background-color: transparent; }
-
-ul .list-group {
-  background-color: transparent; }
 
 html {
   overflow-y: scroll; }
