@@ -1,6 +1,8 @@
 @extends('master-auth')
 
 @section('content')
+    <div><h1><?= env('DB_DATABASE') ?></h1></div>
+    <div><h1><?= App::environment() ?></h1></div>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -22,9 +24,9 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">Main Character</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								<input type="text" class="form-control" name="main_toon" value="{{ old('main_toon') }}">
 							</div>
 						</div>
 

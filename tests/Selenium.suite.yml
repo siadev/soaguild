@@ -1,0 +1,25 @@
+class_name: SeleniumGuy
+paths:
+    tests:   /tests/
+    log:     /tests/_output
+    data:    /tests/_data
+    helpers: /tests/_support
+settings:
+    log: true
+modules:
+    enabled: [WebDriver, Db]
+    config:
+        WebDriver:
+            url: 'http://soaguild.dev/'
+            browser: firefox
+            window_size: 2000x900
+            wait: 0
+        capabilities:
+            unexpectedAlertBehaviour: 'accept'
+        Db:
+            dsn: 'mysql:host=localhost;dbname=soaguild'
+            user: 'soaguild'
+            password: 'itbuff2121'
+            dump: tests/_data/dump.sql
+            populate: true
+            cleanup: false

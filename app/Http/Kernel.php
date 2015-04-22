@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'soaguild\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'soaguild\Http\Middleware\RedirectIfAuthenticated',
+        'main_toon' => 'App\Http\Middleware\mainToonAuthMiddleware',
 	];
 
 }

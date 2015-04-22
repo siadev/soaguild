@@ -9,10 +9,17 @@
 		"davejamesmiller/laravel-breadcrumbs": "~3.0"
 	},
 	"require-dev": {
+        "behat/behat": "*@stable",
+        "behat/mink": "*@stable",
+        "behat/mink-extension": "*" ,
+        "behat/mink-goutte-driver": "@stable",
+        "behat/mink-selenium2-driver": "*",
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
 		"laracasts/generators": "~1.1",
-		"laracasts/testdummy": "~2.3"
+		"laracasts/testdummy": "~2.3",
+		"laracasts/behat-laravel-extension": "~1.0",
+        "laracasts/integrated": "*"
 	},
 	"autoload": {
 		"classmap": [
