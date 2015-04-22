@@ -92,29 +92,25 @@ that every project should consist of.
         sudo composer update
     ```
 * <b> Create Seed files - Using Testdummy and Faker </b>
- 
   1. to create a file use:
 
 	    ```
          php artisan make:seed [Filename] 
     
         ```
-  + Help with Testdummy and Faker:
-    
+  2. Help with Testdummy and Faker:
     https://github.com/laracasts/TestDummy
     
     <b> NOTES ON SEEDING : </b>
-    ```
+    ```bash
         composer dump-autoload
     ```
     Then run:
-    ```
+    ```bash
        php artisan db:seed
-    
     ```
       
- 
- * <b> NPM Install gulp and Laravel </b>
+  * <b> NPM Install gulp and Laravel </b>
  Before using the Gulp file with elixir you need to Install the package dependencies.<br>
  simply type:
  
