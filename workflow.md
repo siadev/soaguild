@@ -15,7 +15,8 @@ Laravel is accessible, yet powerful, providing powerful tools needed for large, 
 The purpose of this file is to briefly list the tools used and methods 
 that every project should consist of.
  
- ## List of Composer Installation (Packages)
+## List of Composer Installation (Packages)
+
 * <b>Before we start run</b>
 
     ```
@@ -94,12 +95,14 @@ that every project should consist of.
     
     
 * <b> Create Seed files - Using Testdummy and Faker </b>
+
   1. to create a file use:
 
 	    ```
          php artisan make:seed [Filename] 
     
         ```
+  
   2. Help with Testdummy and Faker:
     https://github.com/laracasts/TestDummy
     
@@ -113,7 +116,7 @@ that every project should consist of.
     ```
  
       
-  * <b> NPM Install gulp and Laravel </b>
+* <b> NPM Install gulp and Laravel </b>
  Before using the Gulp file with elixir you need to Install the package dependencies.<br>
  simply type:
  
@@ -122,7 +125,7 @@ that every project should consist of.
      ```
  
  
- * <b> Install Laravel Breadcrumbs </b>
+* <b> Install Laravel Breadcrumbs </b>
   1. ``` sudo composer require davejamesmiller/laravel-breadcrumbs  ```
   +  Add to config/app.php<br>
       Add the service provider to ```providers```:
@@ -160,16 +163,16 @@ that every project should consist of.
  
  
  
- * <b> username with Middleware </b>
-   1. in the create_user_table migration file add the following line:
+* <b> username with Middleware </b>
+  1. in the create_user_table migration file add the following line:
    ```php
        $table->string('username')->unique();
    ```
-   + in the User.php model file change the $fillable array to :
+  + in the User.php model file change the $fillable array to :
    ```php
       protected $fillable = ['name','username', 'email', 'password'];
    ```
-   + add to the register.blade.php view the input field for the username
+  + add to the register.blade.php view the input field for the username
    ```php
        <div class="form-group">
           <label class="col-md-4 control-label">Username</label>
@@ -178,7 +181,7 @@ that every project should consist of.
           </div>
        </div>
    ```
-   + in the default registrar.php Service add the username field in the create method
+  + in the default registrar.php Service add the username field in the create method
    ```php
        public function create(array $data)
        {
@@ -193,11 +196,11 @@ that every project should consist of.
    ```bash
        php artisan migrate
    ```
-   + create a middleware
+  + create a middleware
    ```php
        php artisan make:middleware simpleAuthMiddleware
    ```
-   +  the code for the middleware is very easy :
+  +  the code for the middleware is very easy :
    ```php
        <?php namespace App\Http\Middleware;
         
@@ -221,18 +224,19 @@ that every project should consist of.
         
        }
    ```
-   + in the kernel.php file add in the $routeMiddleware the following line
+  + in the kernel.php file add in the $routeMiddleware the following line
    ```php
        'simpleauth' => 'App\Http\Middleware\SimpleAuthMiddleware',
    ```
-   + Now we are ready to use Middelware for username<br>
+  + Now we are ready to use Middelware for username<br>
    Try this in your  routes.php file
    ```php
        Route::get('action', ['uses' => 'ActionController@index','middleware'=>'simpleauth']);
        Route::post('action/create', ['uses' => 'ActionController@store','middleware'=>'simpleauth']);
    ```
 
- * <b><i> phpspec </i></b>
+
+* <b><i> phpspec </i></b>
    install phpspec
    ```
        sudo composer require phpspec/phpspec --dev
@@ -250,7 +254,8 @@ that every project should consist of.
        touch .phpspec.yml
    ```
  
- * <b> phpunit </b>
+
+* <b> phpunit </b>
    install phpunit Globally
    ```
         sudo composer global require "phpunit/phpunit=4.6.*"
@@ -260,19 +265,23 @@ that every project should consist of.
         alias phpunit=~/.composer/vendor/bin/phpunit   
    ```
  
- * <b> Codeception </b> 
+
+* <b> Codeception </b> 
    Codeception is a testing framework that uses PHPUnit and phpspec
    first install it globally
-   ```
+   ```bash
        cd /usr/local/bin/codeception
        wget http://codeception.com/codecept.phar
    ```
+   
    Next create aliases to access cli commands from any project
-   1) Edit the alias file
+   
+  1. Edit the alias file
    ```bash
        sudo vim ~/.bash_aliases
    ```
-   2) Add these lines
+   
+  2. Add these lines
    ```bash
        alias codec='php /usr/local/bin/codeception/codecept.phar'
        
