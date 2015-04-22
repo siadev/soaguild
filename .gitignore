@@ -2,5 +2,9 @@
 /node_modules
 /.idea
 .env
+.env.tests
+.env.example
+.env.behat
 
+tests/_output/*
 tests/_output/*
