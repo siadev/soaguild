@@ -161,79 +161,71 @@ that every project should consist of.
       app/Http/breadcrumbs.php
    ```
  
- 
- 
 * <b> username with Middleware </b>
-  1. in the create_user_table migration file add the following line:
-   ```php
-       $table->string('username')->unique();
-   ```
-  + in the User.php model file change the $fillable array to :
-   ```php
-      protected $fillable = ['name','username', 'email', 'password'];
-   ```
-  + add to the register.blade.php view the input field for the username
-   ```php
-       <div class="form-group">
-          <label class="col-md-4 control-label">Username</label>
-          <div class="col-md-6">
-             <input type="text" class="form-control" name="username" value="{{ old('username') }}">
-          </div>
-       </div>
-   ```
-  + in the default registrar.php Service add the username field in the create method
-   ```php
-       public function create(array $data)
-       {
-          return User::create([
-             'name' => $data['name'],
-             'email' => $data['email'],
-             'username' => $data['username'],
-             'password' => bcrypt($data['password']),
-          ]);
-       }
-   ```
-   ```bash
-       php artisan migrate
-   ```
-  + create a middleware
-   ```php
-       php artisan make:middleware simpleAuthMiddleware
-   ```
-  +  the code for the middleware is very easy :
-   ```php
-       <?php namespace App\Http\Middleware;
-        
-       use Closure;
-        
-        
-       class SimpleAuthMiddleware
-       {
-        
-          /**
-           * Handle an incoming request.
-           *
-           * @param  \Illuminate\Http\Request $request
-           * @param  \Closure $next
-           * @return mixed
-           */
-          public function handle($request, Closure $next)
+  1. Copy the trait AuthenticatesAndRegistersUsers to your namespace or app directory
+  ```bash
+      cp vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php app/MyAuthAndRegistersUsers.php
+  ```
+  
+  2. Change the necessary method for username
+  ```php
+      public function postLogin(Request $request)
           {
-             return Auth::onceBasic('username') ?: $next($request);
+              $this->validate($request, [
+                  'username' => 'required', 'password' => 'required',
+              ]);
+      
+              $credentials = $request->only('username', 'password');
+      
+              if ($this->auth->attempt($credentials, $request->has('remember')))
+              {
+                  return redirect()->intended($this->redirectPath());
+              }
+      
+              return redirect($this->loginPath())
+                  ->withInput($request->only('username', 'remember'))
+                  ->withErrors([
+                      'username' => $this->getFailedLoginMessage(),
+                  ]);
           }
-        
-       }
-   ```
-  + in the kernel.php file add in the $routeMiddleware the following line
-   ```php
-       'simpleauth' => 'App\Http\Middleware\SimpleAuthMiddleware',
-   ```
-  + Now we are ready to use Middelware for username<br>
-   Try this in your  routes.php file
-   ```php
-       Route::get('action', ['uses' => 'ActionController@index','middleware'=>'simpleauth']);
-       Route::post('action/create', ['uses' => 'ActionController@store','middleware'=>'simpleauth']);
-   ```
+  ```
+  
+  3. Edit Http/Controllers/Auth/AuthController.php<br>
+  Use your trait you changed instead of the default<br>
+  change app/ for YourNamespace/ if required
+  ```php
+      use app/MyAuthAndRegistersUsers
+      
+      class AuthController extends Controller {
+      
+          use MyAuthAndRegistersUsers
+          
+          // . . .
+      
+      }
+  ```
+
+  4. Either create your own login.blade file or edit the existing one
+  ```php
+      <input type="username" class="form-control" name="username" value="{{ old('username') }}">
+  ```
+  
+  5. If you create your own or copy the original and modify the copy<br>
+  then change the trait method MyAuthAndRegistersUsers mentioned above.
+  ```php
+          /**
+           * Show the application login form.
+           *
+           * @return \Illuminate\Http\Response
+           */
+          public function getLogin()
+          {
+              return view('auth.mylogin');
+          }
+  ```
+  
+  6. That's it.<br> 
+  You can now login with a username instead of email address.
 
 
 * <b><i> phpspec </i></b>

@@ -1,5 +1,6 @@
 <?php namespace soaguild\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use soaguild\Http\Requests;
 use soaguild\Http\Controllers\Controller;
 

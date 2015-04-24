@@ -22,7 +22,7 @@
 //endregion
 
 //region Authenticated Routes
-    Route::group(['middleware' => 'main_toon'], function()
+    Route::group(['middleware' => 'auth'], function()
     {
         Route::get('feeds',          ['uses' => 'PagesController@feeds' ,  'as' => 'feeds']);
         Route::get('events',         ['uses' => 'EventsController@index' , 'as' => 'events']);

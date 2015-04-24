@@ -1,9 +1,10 @@
 <?php namespace soaguild\Http\Controllers\Auth;
 
+use soaguild\AuthAndRegistersUsers;
 use soaguild\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+//use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller {
 
@@ -18,7 +19,8 @@ class AuthController extends Controller {
 	|
 	*/
 
-	use AuthenticatesAndRegistersUsers;
+//	 use AuthenticatesAndRegistersUsers;
+    use AuthAndRegistersUsers;
 
 	/**
 	 * Create a new authentication controller instance.
