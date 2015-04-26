@@ -69,7 +69,7 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
      */
     public function iSignInWithInvalidCredentials()
     {
-        $this->email = 'invalid@example.com';
+        $this->main_toon = 'invalid@example.com';
         $this->iSignIn();
     }
 

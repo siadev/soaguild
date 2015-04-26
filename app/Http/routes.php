@@ -19,6 +19,9 @@
     Route::get('news',  ['uses' => 'PagesController@news' ,  'as' => 'news'] );
     Route::get('about', ['uses' => 'PagesController@about' , 'as' => 'about']);
     //Route::get('feeds', ['uses' => 'PagesController@feeds' , 'as' => 'feeds']);
+
+    Route::get('oauth_wow', ['uses' => 'PagesController@oauth_wow' , 'as' => 'oauth_wow']);
+    Route::get('callback',  ['uses' => 'PagesController@callback' , 'as' => 'callback']);
 //endregion
 
 //region Authenticated Routes

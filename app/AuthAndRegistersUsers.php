@@ -18,6 +18,7 @@ use Illuminate\Contracts\Auth\Registrar;
 
 
 trait AuthAndRegistersUsers {
+
     /**
      * The Guard implementation.
      *
@@ -146,4 +147,6 @@ trait AuthAndRegistersUsers {
     {
         return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
     }
+
+
 }

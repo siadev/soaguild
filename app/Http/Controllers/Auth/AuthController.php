@@ -4,6 +4,9 @@ use soaguild\AuthAndRegistersUsers;
 use soaguild\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
+use soaguild\WowCallback;
+use soaguild\WowLogin;
+
 //use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller {
@@ -20,7 +23,7 @@ class AuthController extends Controller {
 	*/
 
 //	 use AuthenticatesAndRegistersUsers;
-    use AuthAndRegistersUsers;
+    use AuthAndRegistersUsers, WowLogin, WowCallback;
 
 	/**
 	 * Create a new authentication controller instance.
@@ -36,5 +39,15 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
+
+    public function getLogin()
+    {
+        $this->wow_authenticated();
+//        $this->wow_authenticated_callback();
+
+
+        return view('auth.soalogin');
+    }
+
 
 }

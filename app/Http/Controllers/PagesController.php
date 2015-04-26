@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 // Add Command Classes
 use soaguild\Commands\WowFeedsCommand;
-use soaguild\Commands\WowApiFeedsCommandBus;
-use soaguild\Commands\WowApiFeedsCommand;
 
 class PagesController extends Controller {
 
@@ -25,6 +23,15 @@ class PagesController extends Controller {
         return view('pages.home', compact('title'));
     }
 
+    public function oauth_wow()
+    {
+        return view('pages.oauth_callback');
+    }
+
+    public function callback()
+    {
+        return view('pages.callback');
+    }
     /**
      * About page.
      *
@@ -33,7 +40,6 @@ class PagesController extends Controller {
     public function about()
     {
         return view('pages.about');
-
     }
 
     /**

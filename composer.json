@@ -6,7 +6,9 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"davejamesmiller/laravel-breadcrumbs": "~3.0"
+		"davejamesmiller/laravel-breadcrumbs": "~3.0",
+		"fkooman/oauth-client": "0.5.*",
+		"fkooman/guzzle-bearer-auth-plugin": "0.2.*"
 	},
 	"require-dev": {
         "behat/behat": "*@stable",
@@ -27,7 +29,9 @@
 		],
 		"psr-4": {
 			"soaguild\\": "app/"
-		}
+		},
+            "files": [ "app/SoaHelpers/active_links.php",
+                       "app/SoaHelpers/helpers.php" ]
 	},
 	"autoload-dev": {
 		"classmap": [

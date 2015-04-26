@@ -20,11 +20,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="soa-navbar-collapse">
             <ul class="nav navbar-nav">
-                    <li>{!! Request::is( 'home') ? '<span class="nav-current">Home</span>' : '<a href="/home">Home</a>' !!}</li>
+                    <li>{!! Request::is('home') ? '<span class="nav-current">Home</span>' : '<a href="/home">Home</a>' !!}</li>
                     @if ( Auth::check() )
                         <li>{!! Request::is( 'events') ? '<span class="nav-current">Events</span>' : '<a href="/events">Events</a>' !!}</li>
 
-                        <li>{!! Request::is( 'feeds') ? '<span class="nav-current">Activity Feed</span>' : '<a href="/feeds">Activity Feed</a>' !!}</li>
+                        <li> {!! set_active('Activity Feed', 'feeds') !!} </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Guild <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -38,14 +38,14 @@
                             </ul>
                         </li>
 
-                        <li>{!! Request::is( 'chat') ? '<span class="nav-current">Live Chat</span>' : '<a href="/chat">Live Chat</a>' !!}</li>
+                        <li> {!! set_active('Live Chat',  'chat')  !!} </li>
                     @endif
                     {{--@if (Auth::guest())--}}
                         {{--<li><a href="/news">Guest</a></li>--}}
                     {{--@endif--}}
 
-                    <li>{!! Request::is( 'news') ? '<span class="nav-current">News</span>' : '<a href="/news">News</a>' !!}</li>
-                    <li>{!! Request::is( 'about') ? '<span class="nav-current">About</span>' : '<a href="/about">About</a>' !!}</li>
+                    <li> {!! set_active('News',  'news')  !!} </li>
+                    <li> {!! set_active('About', 'about') !!}</li>
                 </ul>
 
             <div class="col-sm-3 col-md-3">

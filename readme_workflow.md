@@ -227,6 +227,32 @@ that every project should consist of.
   6. That's it.<br> 
   You can now login with a username instead of email address.
 
+* <b> OAuth2 Authentication client </b>
+  ```php
+      sudo composer require fkooman/oauth-client
+      sudo composer require fkooman/guzzle-bearer-auth-plugin
+  ```
+
+* <b> Autoload files </b>
+ 1. Edit composer.json and add the files statement below:
+ ```php
+     	"autoload": {
+     		"classmap": [
+     			"database"
+     		],
+     		"psr-4": {
+     			"soaguild\\": "app/"
+     		},
+            "files": [ "app/MyHelpers/active_links.php",
+                       "app/MyHelpers/helpers.php" ]
+     	},
+ ```
+ 2. in your console run:
+ ```bash
+     composer dump
+ ```
+ 3. Done, you can use the functions from anywhere<br>
+    No classes are required.
 
 * <b><i> phpspec </i></b>
    install phpspec
